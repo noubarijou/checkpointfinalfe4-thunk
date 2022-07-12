@@ -1,5 +1,11 @@
 import { Character } from "../../type";
-import { FAVORITE_CHARACTERS, FETCH_CHARACTERS_ERROR, FETCH_CHARACTERS_ID_SUCCESS, FETCH_CHARACTERS_START, FETCH_CHARACTERS_SUCCESS } from "../actions/characters.actions";
+import {
+    FAVORITE_CHARACTERS,
+    FETCH_CHARACTERS_ERROR,
+    FETCH_CHARACTERS_ID_SUCCESS,
+    FETCH_CHARACTERS_START,
+    FETCH_CHARACTERS_SUCCESS
+} from "../actions/characters.actions";
 
 type ActionType = {
     type: string;

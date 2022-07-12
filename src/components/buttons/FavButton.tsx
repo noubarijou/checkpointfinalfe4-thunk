@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react";
 import markedFavorite from "../img/star-filled.png";
 import notFavorite from "../img/star.png";
 /**
@@ -9,12 +10,12 @@ import notFavorite from "../img/star.png";
  * @returns Elemento JSX
  */
 
-interface Button {
+interface ButtonProps {
     isFavorite: boolean;
-    handleClick?: any;
+    handleClick?: MouseEventHandler;
 }
 
-const FavButton = ({ isFavorite, handleClick }: Button) => {
+const FavButton = ({ isFavorite, handleClick }: ButtonProps) => {
     const source = isFavorite ? markedFavorite : notFavorite;
     return (
         <div className="FavButton">

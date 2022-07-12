@@ -1,4 +1,3 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
 import FavButton from '../components/buttons/FavButton';
 import EpisodesCard from '../components/episodes/EpisodesCard';
@@ -18,9 +17,9 @@ import EpisodesCard from '../components/episodes/EpisodesCard';
 
 const Details = () => {
     const stateCharacter = useSelector((state: any) => state.char.character);
-    /* const episodesArr = stateCharacter.char.episode.slice(
-        stateCharacter.characters.episode.indexOf(
-            "https://rickandmortyapi.com/api/episode/") + 1) */
+    /*const episodesArr = stateCharacter.char.episode.slice(
+       stateCharacter.characters.episode.indexOf(
+           "https://rickandmortyapi.com/api/episode/") + 1) */
 
     return (
         <div className='container'>
@@ -33,16 +32,34 @@ const Details = () => {
                         <p>Planet: {stateCharacter?.character?.origin.name}</p>
                         <p>Gender: {stateCharacter?.character?.gender}</p>
                     </div>
-                    <FavButton isFavorite={false} />
+                    <FavButton isFavorite={stateCharacter.character.favorito} />
                 </div>
             </div>
             <h4>List of episodes the charater was in</h4>
             <div className={'episodesGrid'}>
                 <EpisodesCard />
-
             </div>
         </div>
     )
 }
 
 export default Details;
+
+
+
+/* const [favChars, setFavChars] = useState<Character[]>();
+const characters = useSelector((state: GlobalState) => state.char.characters)
+const dispatch = useDispatch();
+
+useEffect(() =>{
+let filteredCharacters = characters.filter((character: Character) => character.favorite ?? character)
+setFavChars(filteredCharacters)
+}, [characters])
+ 
+
+return (
+<section className='detailsPage'>
+    <h3>Chracter Details Page</h3>
+    <CharacterCard character={characters} />
+</section>
+) */
